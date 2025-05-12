@@ -1,0 +1,25 @@
+.wp-block-b-blocks-test-purpose {
+  box-sizing: border-box;
+}
+.wp-block-b-blocks-test-purpose * {
+  box-sizing: border-box;
+}
+.wp-block-b-blocks-test-purpose .carousel-indicators [data-bs-target] {
+  width: 30px;
+  height: 5px;
+  z-index: 10;
+}
+.wp-block-b-blocks-test-purpose .caroselWrapper {
+  position: relative;
+  z-index: 2;
+}
+.wp-block-b-blocks-test-purpose .icon {
+  z-index: 3;
+}
+.wp-block-b-blocks-test-purpose .carousel-control-prev,
+.wp-block-b-blocks-test-purpose .carousel-control-next {
+  z-index: 4 !important;
+}
+.wp-block-b-blocks-test-purpose .buttonAnchore .buttonLink {
+  text-decoration: none;
+}/*# sourceMappingURL=style.css.map */

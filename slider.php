@@ -26,6 +26,7 @@ if( !class_exists( 'PREFIXPlugin' ) ){
              add_shortcode( 'slider',  [$this,'slider_shortcode'] );
               add_filter('manage_posts_columns',  [ $this,'manage_posts_columns']);
               add_action('manage_posts_custom_column',  [ $this,'manage_posts_custom_column'], 10, 2);
+              add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_admin_assets' ] );
 		}
 
 		function onInit(){
@@ -65,14 +66,31 @@ if( !class_exists( 'PREFIXPlugin' ) ){
         }
          function manage_posts_custom_column ($column_name, $post_ID){
             if ($column_name == "shortcode") {
-                 echo '[slider id='.$post_ID.']';
-                // echo '<div class="bPlAdminShortcode" id="bPlAdminShortcode-' . esc_attr( $post_ID ) . '">
-                //      <input value="[slider id=' . esc_attr( $post_ID ) . ']" onclick="copyBPlAdminShortcode(\'' . esc_attr( $post_ID ) . '\')">
-                //      <span class="tooltip">' . esc_html__( 'Copy To Clipboard' ) . '</span>
-                //    </div>';
+                //  echo '[slider id='.$post_ID.']';
+            echo '<div class="bPlAdminShortcode" id="bPlAdminShortcode-' . esc_attr( $post_ID ) . '">
+                     <input value="[slider id=' . esc_attr( $post_ID ) . ']" onclick="copyBPlAdminShortcode(this)">
+                     <span class="tooltip">' . esc_html__( 'Copy To Clipboard' ) . '</span>
+                   </div>';
             }
            
         }
+        function enqueue_admin_assets() {
+    wp_enqueue_script(
+        'slider-admin-script',
+        PREFIX_DIR_URL . 'src/admin/admin.js',
+        [],
+        PREFIX_VERSION,
+        true
+    );
+
+    wp_enqueue_style(
+        'slider-admin-style',
+        PREFIX_DIR_URL . 'src/admin/post.css',
+        [],
+        PREFIX_VERSION
+    );
+}
+
         
 	}
 	new PREFIXPlugin();
