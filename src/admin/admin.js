@@ -1,13 +1,11 @@
-function copyBPlAdminShortcode(inputElement) {
-    inputElement.select();
-    inputElement.setSelectionRange(0, 99999); // For mobile
-    document.execCommand("copy");
-
-    const tooltip = inputElement.nextElementSibling;
-    if (tooltip) {
-        tooltip.textContent = "Copied!";
-        setTimeout(() => {
-            tooltip.textContent = "Copy To Clipboard";
-        }, 2000);
-    }
+window.copyBPlAdminShortcode = id => {
+    var input = document.querySelector('#bPlAdminShortcode-' + id + ' input');
+    var tooltip = document.querySelector('#bPlAdminShortcode-' + id + ' .tooltip');
+    input.select();
+    input.setSelectionRange(0, 30);
+    document.execCommand('copy');
+    tooltip.innerHTML = wp.i18n.__('Copied Successfully!', 'advanced-post-block');
+    setTimeout(() => {
+        tooltip.innerHTML = wp.i18n.__('Copy To Clipboard', 'advanced-post-block');
+    }, 1500);
 }

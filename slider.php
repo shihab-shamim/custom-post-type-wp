@@ -61,16 +61,17 @@ if( !class_exists( 'PREFIXPlugin' ) ){
             unset($defaults['date']);
             $defaults['shortcode'] = "Shortcode";
             $defaults['author'] = "Post by";
+            // $defaults['rout'] = "";
             $defaults['date'] = "Date";
             return $defaults;
         }
          function manage_posts_custom_column ($column_name, $post_ID){
             if ($column_name == "shortcode") {
                 //  echo '[slider id='.$post_ID.']';
-            echo '<div class="bPlAdminShortcode" id="bPlAdminShortcode-' . esc_attr( $post_ID ) . '">
-                     <input value="[slider id=' . esc_attr( $post_ID ) . ']" onclick="copyBPlAdminShortcode(this)">
-                     <span class="tooltip">' . esc_html__( 'Copy To Clipboard' ) . '</span>
-                   </div>';
+         echo '<div class="bPlAdminShortcode" id="bPlAdminShortcode-' . esc_attr( $post_ID ) . '">
+                <input value="[Slider id=' . esc_attr( $post_ID ) . ']" onclick="copyBPlAdminShortcode(\'' . esc_attr( $post_ID ) . '\')">
+                <span class="tooltip">' . esc_html__( 'Copy To Clipboard' ) . '</span>
+                </div>';
             }
            
         }
