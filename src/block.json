@@ -1,0 +1,339 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "b-blocks/test-purpose",
+	"version": "1.0.0",
+	"title": "Slider",
+	"category": "widgets",
+	"description": "Short description of the Slider",
+	"keywords": [
+		"Slider"
+	],
+	"textdomain": "b-blocks",
+	"attributes": {
+		"align": {
+			"type": "string",
+			"default": "none"
+		},
+		"sliders":{
+			"type":"array",
+			"default":[
+				{
+				  "img": "https://plus.unsplash.com/premium_photo-1720188548716-9de4d2911fff?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+				  "title": "Taste the Innovation",
+				  "desc": "Fresh flavors, unforgettable bites.",
+				  "buttonTest":"Click Me",
+				  "url":"https://www.google.com/",
+				  "new":true
+				},
+				{
+				  "img": "https://images.unsplash.com/photo-1738193026612-4a953a4f4e96?q=80&w=2022&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+				  "title": "Pure & Bold",
+				  "desc": "Fresh ingredients, rich taste.",
+				  "buttonTest":"Click Me",
+				  "url":"https://www.google.com/",
+				  "new":true
+				},
+				{
+				  "img": "https://images.unsplash.com/photo-1738694237335-a537515c0b7b?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+				  "title": "Elevate Your Senses",
+				  "desc": "A journey of flavor awaits.",
+				  "buttonTest":"Click Me",
+				  "url":"https://www.google.com/",
+				  "new":false
+				}
+			  ]
+		},
+		"icon": {
+  "type": "string",
+  "default": "<svg stroke='currentColor' fill='currentColor' stroke-width='0' viewBox='0 0 1024 1024' height='1em' width='1em' xmlns='http://www.w3.org/2000/svg'><path d='M869 487.8L491.2 159.9c-2.9-2.5-6.6-3.9-10.5-3.9h-88.5c-7.4 0-10.8 9.2-5.2 14l350.2 304H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h585.1L386.9 854c-5.6 4.9-2.2 14 5.2 14h91.5c1.9 0 3.8-.7 5.2-2L869 536.2a32.07 32.07 0 0 0 0-48.4z'></path></svg>"
+}
+,
+	"iconsStyle":{
+		"type":"object",
+		"default":{
+			"width":"30px",
+			"height":"30px",
+            "color":"rgb(255, 0, 0)",
+			"bg":""
+		}
+	},
+	"iconRadius":{
+		"type":"object",
+		"default":{
+			"top":"1px",
+			"left":"1px",
+			"right":"1px",
+			"bottom":"1px"
+		}
+	},
+	"indicator":{
+		"type":"object",
+		"default":{
+			"width":"20px",
+			"height":"5px",
+            "color":"#fff"
+			
+		}
+	},
+	"activeIndicator":{
+		"type":"object",
+		"default":{
+			"width":"30px",
+			"height":"10px",
+            "color":"#FF0000"
+			
+		}
+	},
+	"indicatoRadius":{
+		"type":"object",
+		"default":{
+			"top":"1px",
+			"left":"1px",
+			"right":"1px",
+			"bottom":"1px"
+		}
+	},
+	"indicatorBorder":{
+		"type":"object",
+		"default":{
+			"color": "#008000",
+			"style": "dashed",
+			"width": "0px"
+		  }
+	},
+	"innerGap":{
+		"type":"object",
+		"default":{
+			"desktop":"150px",
+			"tablet":"100px",
+			"mobile":"50px"
+		}
+	},
+	"containerHeigh":{
+		"type":"object",
+		"default":{
+			"desktop":"500px",
+			"tablet":"500px",
+			"mobile":"450px"
+		}
+
+	},
+	"contentAlignment":{
+		"type":"string",
+		"default":"center"
+	},
+	"effect":{
+		"type":"string",
+		"default":"default"
+	},
+	"autoPlay":{
+		"type":"object",
+		"default":{
+            "enabled":false,
+            "interval": 2000,
+            "time": 5000000
+        }
+	},
+	"arrowButton":{
+		"type":"boolean",
+		"default":true
+	},
+	"showPagination":{
+		"type":"boolean",
+		"default":true
+	},
+	"interrogation":{
+		"type":"boolean",
+        "default":true
+	},
+	"wrap":{
+		"type":"boolean",
+		"default":true
+	},
+	"direction":{
+		"type":"string",
+		"default":"row"
+	},
+	"indicatorPosition":{
+		"type":"string",
+        "default":"bottom"
+	},
+	"overlyColor":{
+		"type":"string",
+		"default":"rgba(0, 0, 0, 0.5)"
+	},
+	"slideMargin":{
+		"type":"object",
+		"default":{
+			"top":"0px",
+			"right":"0px",
+			"bottom":"0px",
+			"left":"0px"
+		}
+	},
+	"sliderRadius":{
+		"type":"object",
+		"default":{
+			"top":"0px",
+			"right":"0px",
+			"bottom":"0px",
+			"left":"0px"
+		}
+	},
+	"titleTypho":{
+		"type":"object",
+		"default":{
+			
+				"fontFamily": "",
+				"fontCategory": "",
+				"fontWeight": "",
+				"isUploadFont": "",
+				"fontSize": {
+				  "desktop": "20px",
+				  "tablet": "20px",
+				  "mobile": "20px"
+				},
+				"fontStyle": "",
+				"textTransform": "",
+				"textDecoration": "",
+				"lineHeight": "",
+				"letterSpace": ""
+			  
+		}
+	},
+	"titleColor":{
+		"type":"string",
+		"default":"#ffffff"
+	},
+	"desPadding":{
+		"type":"object",
+		"default":{
+			"top":"0px",
+			"right":"0px",
+			"bottom":"0px",
+			"left":"0px"
+		}
+
+	},
+	"desTypho":{
+		"type":"object",
+		"default":{
+			
+				"fontFamily": "",
+				"fontCategory": "",
+				"fontWeight": "",
+				"isUploadFont": "",
+				"fontSize": {
+				  "desktop": "20px",
+				  "tablet": "20px",
+				  "mobile": "20px"
+				},
+				"fontStyle": "",
+				"textTransform": "",
+				"textDecoration": "",
+				"lineHeight": "",
+				"letterSpace": ""
+			  
+		}
+	},
+	"descolor":{
+		"type":"string",
+		"default":"#ffffff"
+	},
+	"titleAnimation":{
+		"type":"object",
+		"default":{
+			"effect":"slideInFromRight",
+			"duration": 1,
+			"delay":0.5
+            
+		}
+	}
+	,
+	"desAnimation":{
+		"type":"object",
+		"default":{
+			"effect":"slideInFromBottom",
+			"duration": 1,
+			"delay":0.5
+            
+		}
+	},"titlePadding":{
+		"type":"object",
+		"default":{
+			"top":"0px",
+			"right":"0px",
+			"bottom":"0px",
+			"left":"0px"
+		}
+	},
+	"keybord":{
+		"type":"boolean",
+		"default":true
+	},
+	"buttonColor":{
+		"type":"object",
+		"default":{
+		"bgColor":"#808080",
+		"color":"#ffffff"
+
+		}
+	},"buttonPadding":{
+		"type":"object",
+		"default":{
+			"top":"10px",
+			"right":"20px",
+			"bottom":"10px",
+			"left":"20px"
+		}
+	},"buttonRadius":{
+		"type":"object",
+		"default":{
+			"top":"10px",
+			"right":"10px",
+			"bottom":"10px",
+			"left":"10px"
+		}
+	},
+	"buttonBorder":{
+		"type":"object",
+		"default":{
+			"color": "#ffffff",
+			"style": "solid",
+			"width": "1px"
+		  }
+	},
+	"buttonColorhO":{
+		"type":"object",
+		"default":{
+		"bgColor":"#ffffff",
+		"color":"#808080"
+
+		}
+	},
+	"buttonBorderHo":{
+		"type":"object",
+		"default":{
+			"color": "#000000",
+			"style": "solid",
+			"width": "1px"
+		  }
+	}
+	},
+	"supports": {
+		"align": [
+			"wide",
+			"full"
+		],
+		"html": false
+	},
+	"example": {
+		"attributes": {}
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./view.css",
+	"render": "file:./render.php",
+	"viewScript": "file:./view.js"
+}
