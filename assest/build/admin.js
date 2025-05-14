@@ -154,7 +154,6 @@ const Setting = () => {
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     fetch(`${url}?action=form_data_get&nonce=${nonce}`).then(res => res.json()).then(data => setFormData(data.data));
   }, []);
-  console.log(formDate);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
     className: "",
     style: {

@@ -28,7 +28,6 @@ const Setting = () => {
 
     },[])
 
-    console.log(formDate);
     return (
         <div className='' style={{marginTop:"50px"}}>
           {/* <form onSubmit={handleSubmit}>

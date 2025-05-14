@@ -13,8 +13,18 @@ if( !defined('ABSPATH') ){ exit;}
         // add_action( 'wp_ajax_form_data_post', array($this, 'form_submit_data_callback') );
         add_action( 'wp_ajax_form_data_post', array( $this, 'form_submit_data_callback' ) );
         add_action( 'wp_ajax_form_data_get', array( $this, 'form_submit_data_get_callback' ) );
+        add_shortcode( 'profile',  [$this,'profile_shortcode'] );
         
      }
+  public   function profile_shortcode( $atts ){
+          $formData = get_option("test_admin_page");
+           
+            ob_start();
+           echo '<p>My Name is ' . esc_html($formData['name']) . ' and my email'. esc_html($formData['email']) .'. 
+           My position '. esc_html($formData['position']) .'.My district '. esc_html($formData['city']) .' </p>';
+            return ob_get_clean();
+      }
+      
 
     public  function wpdocs_register_my_custom_menu_page(){
 	add_menu_page( 
