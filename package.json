@@ -1,0 +1,19 @@
+{
+  "name": "admin-menu",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "wp-scripts start admin.js --output-path=assest/build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "Module",
+  "description": "",
+  "devDependencies": {
+    "@wordpress/scripts": "^30.16.0"
+  },
+  "dependencies": {
+    "react-router-dom": "^7.6.0"
+  }
+}
