@@ -24,7 +24,7 @@ if( !defined('ABSPATH') ){ exit;}
 		'Admin Page',
 		[$this,'my_custom_menu_page'],
 		'dashicons-welcome-widgets-menus',
-		90
+		20
 	); 
 }
     public function admin_menu_enqueue($screen){
@@ -46,20 +46,22 @@ if( !defined('ABSPATH') ){ exit;}
     }
     function form_submit_data_callback(){
          check_ajax_referer('test_admin_nonce', 'nonce');
+         
+           $formData = json_decode(file_get_contents("php://input"), true);
 
-         $email=$_GET["email"];
-         $name=$_GET["name"];
-         $gender=$_GET["gender"];
-         $city=$_GET["city"];
-         $position=$_GET["position"];
+        //  $email=$_GET["email"];
+        //  $name=$_GET["name"];
+        //  $gender=$_GET["gender"];
+        //  $city=$_GET["city"];
+        //  $position=$_GET["position"];
 
-         $formData=array(
-            "email"=>$email,
-            "name"=>$name,
-            "gender"=>$gender,
-            "city"=>$city,
-            "position"=>$position
-         );
+        //  $formData=array(
+        //     "email"=>$email,
+        //     "name"=>$name,
+        //     "gender"=>$gender,
+        //     "city"=>$city,
+        //     "position"=>$position
+        //  );
          update_option('test_admin_page', $formData);
 
         
@@ -67,7 +69,6 @@ if( !defined('ABSPATH') ){ exit;}
 
     }
     function form_submit_data_get_callback(){
-        check_ajax_referer('test_admin_nonce', 'nonce');
         $formData=get_option("test_admin_page");
         wp_send_json_success($formData);
     }

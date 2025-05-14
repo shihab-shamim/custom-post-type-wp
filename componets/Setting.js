@@ -9,10 +9,14 @@ const Setting = () => {
 
     const handleSubmit =e=>{
         e.preventDefault();
-        fetch(`${url}?action=form_data_post&nonce=${nonce}&email=${formDate?.email}&gender=${formDate?.gender}&city=${formDate?.city}&name=${formDate?.name}&position=${formDate?.position}`)
+        // fetch(`${url}?action=form_data_post&nonce=${nonce}&email=${formDate?.email}&gender=${formDate?.gender}&city=${formDate?.city}&name=${formDate?.name}&position=${formDate?.position}`)
+        fetch(`${url}?action=form_data_post&nonce=${nonce}`, {
+    method: "POST",
+    body: JSON.stringify(formDate)
+})
         .then(res=>res.json())
         .then(data=>console.log(data))
-        // console.log(formDate);
+       
 
 
 
@@ -23,6 +27,8 @@ const Setting = () => {
         .then(data=>setFormData(data.data))
 
     },[])
+
+    console.log(formDate);
     return (
         <div className='' style={{marginTop:"50px"}}>
           {/* <form onSubmit={handleSubmit}>

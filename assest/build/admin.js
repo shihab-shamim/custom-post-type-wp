@@ -71,11 +71,11 @@ const DashBoard = () => {
         display: "flex",
         gap: "50px"
       },
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.NavLink, {
         style: navStyle,
         to: "/about",
         children: "About"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.NavLink, {
         style: navStyle,
         to: "/setting",
         children: "Setting"
@@ -107,8 +107,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// import Setting from "./Setting";
-// import Setting from "./Setting";
 
 const router = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.createHashRouter)([{
   path: "/",
@@ -147,12 +145,16 @@ const Setting = () => {
   const nonce = test_admin_page?.nonce;
   const handleSubmit = e => {
     e.preventDefault();
-    fetch(`${url}?action=form_data_post&nonce=${nonce}&email=${formDate?.email}&gender=${formDate?.gender}&city=${formDate?.city}&name=${formDate?.name}&position=${formDate?.position}`).then(res => res.json()).then(data => console.log(data));
-    // console.log(formDate);
+    // fetch(`${url}?action=form_data_post&nonce=${nonce}&email=${formDate?.email}&gender=${formDate?.gender}&city=${formDate?.city}&name=${formDate?.name}&position=${formDate?.position}`)
+    fetch(`${url}?action=form_data_post&nonce=${nonce}`, {
+      method: "POST",
+      body: JSON.stringify(formDate)
+    }).then(res => res.json()).then(data => console.log(data));
   };
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     fetch(`${url}?action=form_data_get&nonce=${nonce}`).then(res => res.json()).then(data => setFormData(data.data));
   }, []);
+  console.log(formDate);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
     className: "",
     style: {

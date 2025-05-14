@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import {  NavLink, Outlet } from "react-router-dom";
 import '../admin.scss'
 
 const DashBoard = () => {
@@ -10,8 +10,8 @@ const DashBoard = () => {
   return (
     <div className="wrap main" >
   <div style={{backgroundColor:"black",padding:"20px",display:"flex", gap:"50px"}}>
-        <Link style={navStyle} to="/about">About</Link>
-      <Link style={navStyle} to="/setting">Setting</Link>
+        <NavLink style={navStyle} to="/about">About</NavLink>
+      <NavLink style={navStyle} to="/setting">Setting</NavLink>
   </div>
       <Outlet />
     </div>

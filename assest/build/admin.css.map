@@ -1,1 +1,1 @@
-{"version":3,"file":"admin.css","mappings":";;;AAAA;EACI;AACJ,C","sources":["webpack://admin-menu/./admin.scss"],"sourcesContent":[".main{\r\n    background-color: red;\r\n}"],"names":[],"sourceRoot":""}
+{"version":3,"file":"admin.css","mappings":";;;AAAA;EAGI;AADJ,C","sources":["webpack://admin-menu/./admin.scss"],"sourcesContent":[".active{\r\n    \r\n    \r\n    color: blue !important;\r\n \r\n}"],"names":[],"sourceRoot":""}
